@@ -220,6 +220,21 @@ header {
   transition: 0.3s;
   cursor: pointer;
 }
+/* Desktop hover */
+.size:hover {
+  background: var(--pink-main);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Mobile tap */
+.size:active,
+.size:focus,
+.size:focus-visible {
+  background: var(--pink-main);
+  color: var(--white);
+  transform: scale(1.1);
+}
 
 .size:hover {
   background: var(--pink-main);

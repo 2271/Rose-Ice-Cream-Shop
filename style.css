@@ -1,12 +1,9 @@
-/* =====================
-   Global Styles
-===================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
 }
 
 :root {
@@ -14,18 +11,16 @@
   --pink-light: #ffd6e0;
   --pink-dark: #e75480;
   --rose: #fff0f5;
-  --white: #ffffff;
+  --white: #fff;
   --dark: #333;
 }
 
 .container {
   width: 80%;
-  margin: 40px auto; /* مسافة عن الحواف */
+  margin: auto;
 }
 
-/* =====================
-   Navbar
-===================== */
+/* Navbar */
 header {
   background: var(--pink-main);
   padding: 20px 0;
@@ -44,15 +39,13 @@ header {
 }
 
 .logo img {
-  width: 100px;
+  width: 80px;
 }
 
-.logo span {
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+.logo-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .nav ul {
@@ -65,92 +58,48 @@ header {
 }
 
 .nav ul li a {
-  position: relative;
-  color: var(--white);
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  padding-bottom: 6px;
-  font-size: 16px;
-  transition: color 0.3s;
 }
 
-.nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--pink-light);
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-  border-radius: 5px;
-}
-
-.nav ul li a:hover {
-  color: var(--pink-light);
-}
-
-.nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* =====================
-   Hero Section
-===================== */
+/* Hero */
 .hero {
+  position: relative;
   height: 90vh;
-  background: linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.35)
-    ),
-    url("./img/istockphoto-1817174766-612x612.jpg") center/cover;
-    size: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 70%;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./img/hero-bg.jpg") center/cover no-repeat;
+  opacity: 0.3;
 }
 
 .hero-content {
+  position: relative;
   text-align: center;
-  color: var(--white);
+  color: white;
 }
 
-.hero-content h2 {
-  font-size: 56px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-  font-size: 20px;
-  margin: 15px 0;
-}
-
-/* Button */
 .btn {
-  background: var(--pink-main);
-  color: var(--white);
-  padding: 12px 30px;
-  text-decoration: none;
-  border-radius: 25px;
   display: inline-block;
-  transition: 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-top: 15px;
+  background: var(--pink-main);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  background: var(--pink-dark);
-}
-
-/* =====================
-   Menu Section (Column Layout)
-===================== */
+/* Menu */
 .menu {
   padding: 80px 0;
-  background: linear-gradient(135deg, #fff0f5 0%, #ffd6e0 100%);
+  background: var(--rose);
 }
 
 .title {
@@ -158,183 +107,76 @@ header {
   margin-bottom: 40px;
 }
 
-.title h2 {
-  color: var(--pink-dark);
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 .menu-items {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 30px;
+  align-items: center;
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--white);
-  width: 300px;
+  background: white;
+  width: 320px;
   padding: 25px;
   border-radius: 20px;
+  text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .item img {
   width: 100px;
-  margin-bottom: 10px;
-}
-
-.item h3 {
-  margin: 10px 0;
-  color: var(--pink-dark);
-  font-weight: 600;
 }
 
 .sizes {
   display: flex;
   justify-content: center;
   gap: 20px;
-  width: 100%;
   margin-top: 10px;
 }
 
 .size {
   border: 2px solid var(--pink-main);
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: transparent;
   color: var(--pink-main);
-  font-size: 14px;
-  text-align: center;
-  transition: 0.3s;
+  font-weight: bold;
   cursor: pointer;
-}
-/* Desktop hover */
-.size:hover {
-  background: var(--pink-main);
-  color: var(--white);
-  transform: scale(1.1);
+  transition: 0.3s;
 }
 
-/* Mobile tap */
-.size:active,
+.size:hover,
 .size:focus,
-.size:focus-visible {
+.size:active {
   background: var(--pink-main);
-  color: var(--white);
+  color: white;
   transform: scale(1.1);
+  outline: none;
 }
 
-.size:hover {
-  background: var(--pink-main);
-  color: var(--white);
-  transform: scale(1.1);
-}
-
-/* =====================
-   About Section
-===================== */
+/* About */
 .about {
   padding: 80px 0;
-  background: var(--white);
 }
 
 .about-content {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
-.about-content h2 {
-  color: var(--pink-dark);
-  margin-bottom: 15px;
-}
-
-.about img {
-  width: 300px;
-  border-radius: 20px;
-}
-
-/* =====================
-   Contact Section
-===================== */
+/* Contact */
 .contact {
   background: var(--pink-dark);
-  color: var(--white);
+  color: white;
   text-align: center;
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
-.contact h2 {
-  margin-bottom: 15px;
-}
-
-/* =====================
-   Footer
-===================== */
+/* Footer */
 footer {
+  background: var(--dark);
+  color: white;
   text-align: center;
   padding: 15px;
-  background: var(--dark);
-  color: var(--white);
-}
-
-/* =====================
-   Responsive (Mobile)
-===================== */
-@media (max-width: 768px) {
-
-  .container {
-    width: 90%;
-  }
-
-  .nav {
-    flex-direction: column;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    margin-top: 15px;
-  }
-
-  .nav ul li {
-    margin: 10px 0;
-  }
-
-  .hero {
-    height: 70vh;
-    padding: 20px;
-  }
-
-  .hero-content h2 {
-    font-size: 32px;
-  }
-
-  .menu-items {
-    gap: 20px;
-  }
-
-  .item {
-    width: 90%;
-  }
-
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about img {
-    width: 80%;
-  }
 }
